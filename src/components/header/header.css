@@ -1,0 +1,4 @@
+.buttonHover {
+    @apply hover:bg-blue-700 rounded-full p-2;
+  }
+  

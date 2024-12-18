@@ -3,11 +3,14 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <div className="bg-blue-700    ">
+    <div className="bg-blue-800    ">
       <nav className="mx-[150px] flex justify-between  p-2 ">
+        {/* Book now */}
         <Link to="/">
           <span className="text-white font-semibold text-xl">BookNow</span>
         </Link>
+
+        {/* Register or login buttons */}
         <div className="flex gap-4">
           <Link to="loginorsignup">
             {" "}
