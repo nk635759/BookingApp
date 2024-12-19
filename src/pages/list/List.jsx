@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function About() {
+export default function List() {
   return (
     <div>
-      <h1>Niraj kUmar</h1>
+      <h1> i am List</h1>
     </div>
   )
 }

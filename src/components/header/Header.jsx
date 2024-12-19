@@ -13,7 +13,7 @@ import "./header.css";
 
 function Header() {
   return (
-    <div className="bg-blue-800 text-gray-200 w-full p-2">
+    <div className="bg-[#0000FF] text-gray-200 w-full p-2">
       <div className="mx-[160px] flex items-center gap-6 relative  text-sm ">
         <button className="border-white border-2 rounded-full p-2  ">
           <FontAwesomeIcon icon={faBed} className="pr-1" />
