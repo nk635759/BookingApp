@@ -10,8 +10,7 @@ function App() {
     <div className='h-auto'>
       <Navbar/> 
       <Header/>
-      <Home/>
-
+      {/* <Home/> */}
       <Outlet/>
     </div>
   )

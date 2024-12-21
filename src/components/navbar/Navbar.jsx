@@ -6,7 +6,7 @@ export default function Navbar() {
     <div className="bg-[#0000FF]   ">
       <nav className="mx-[150px] flex justify-between  p-2 ">
         {/* Book now */}
-        <Link to="/">
+        <Link to="/home">
           <span className="text-white font-semibold text-xl">BookNow</span>
         </Link>
 

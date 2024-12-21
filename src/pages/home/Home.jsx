@@ -1,7 +1,9 @@
+// App.js
 import { faBed, faCalendar, faPerson } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { DateRange } from "react-date-range";
 import React, { useState } from "react";
+import Dropdown from "./Dropdown";
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 
@@ -20,7 +22,14 @@ function Header() {
 }
 
 // SearchBar component includes icons and a date picker
-function SearchBar({ openDate, setOpenDate, date, setDate }) {
+function SearchBar({
+  openDate,
+  setOpenDate,
+  date,
+  setDate,
+  options,
+  setOptions,
+}) {
   return (
     <div className="bg-yellow-500 border-yellow-500 mx-[160px] border-4 h-12 rounded-md mt-[40px] flex justify-between">
       <div className="grid grid-cols-3 w-full gap-1">
@@ -28,6 +37,13 @@ function SearchBar({ openDate, setOpenDate, date, setDate }) {
           <FontAwesomeIcon
             icon={faBed}
             className="text-2xl text-blue-700 ml-2 mt-2"
+          />
+          <input
+            type="text"
+            placeholder="Where are you going?"
+            name=""
+            id=""
+            className="outline-none ml-2 placeholder-black font-semibold "
           />
         </span>
         <span className="bg-white rounded-sm">
@@ -37,7 +53,9 @@ function SearchBar({ openDate, setOpenDate, date, setDate }) {
               icon={faCalendar}
               className="text-2xl text-blue-700 ml-2 mt-2"
             />
-            <span className="text-gray-600 ml-4">date to date</span>
+            <span className="text-gray-600 ml-4">
+              Check-in date -- check-out date{" "}
+            </span>
             {/* Conditionally render the date picker */}
             {openDate && (
               <DateRange
@@ -55,6 +73,8 @@ function SearchBar({ openDate, setOpenDate, date, setDate }) {
             icon={faPerson}
             className="text-2xl text-blue-700 ml-2 mt-2"
           />
+          <span className="ml-2 text-sm font-semibold mr-16">{`${options.adult} adult . ${options.children} children . ${options.room} room`}</span>
+          <Dropdown options={options} setOptions={setOptions} />
         </span>
       </div>
       <button className="bg-blue-700 text-white text-xl font-bold ml-1 rounded-md w-[100px]">
@@ -74,6 +94,12 @@ export default function Home() {
     },
   ]);
 
+  const [options, setOptions] = useState({
+    adult: 1,
+    children: 0,
+    room: 1,
+  });
+
   return (
     <div
       style={{ backgroundImage: "url('./public/booking-app.jpeg')" }}
@@ -85,6 +111,8 @@ export default function Home() {
         setOpenDate={setOpenDate}
         date={date}
         setDate={setDate}
+        options={options}
+        setOptions={setOptions}
       />
     </div>
   );

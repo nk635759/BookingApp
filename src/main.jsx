@@ -11,7 +11,7 @@ import Hotel from './pages/hotel/Hotel.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} >
-      <Route path="home" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/hotels" element={<List />} />
       <Route path="/hotels/:id" element={<Hotel />} />
       <Route path="loginorsignup" element={<LoginOrSifnup />} />
